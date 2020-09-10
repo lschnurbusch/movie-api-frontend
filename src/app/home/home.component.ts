@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  movies: any[] = []
+  constructor(
+    private movieService: MovieService
+  ) { }
 
   ngOnInit(): void {
+    this.retrieveAllMovies()
+  }
+
+  retrieveAllMovies() {
+    this.movieService.getAllMovies().subscribe(data => {
+      debugger
+    })
   }
 
 }
