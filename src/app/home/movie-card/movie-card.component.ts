@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Movie } from "src/app/shared/models/movie";
 
 @Component({
   selector: 'app-movie-card',
@@ -15,12 +16,12 @@ export class MovieCardComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     if(this.movie) {
-      this.movieImg = thing.movie.image
+      this.movieImg = this.movie.image
     }
   }
 
   setDefaultPic() {
-    this.movieImg = 'assets/images/batman-vs-godzilla.png'
+    this.movieImg = 'assets/images/placeholder.png'
   }
 
 }
