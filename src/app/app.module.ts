@@ -37,6 +37,8 @@ import { MovieCardComponent } from './home/movie-card/movie-card.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import {UserService} from './shared/services/user.service'
+import {LocalStorageService} from './shared/services/local-storage.service'
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    MovieService
+    MovieService,
+    UserService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
